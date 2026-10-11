@@ -1,0 +1,19 @@
+.tools/
+target/
+dist/
+test-servers/
+upstream/
+*.log
+__pycache__/
+
+# Local editor and environment files
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db

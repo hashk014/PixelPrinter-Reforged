@@ -1,0 +1,16 @@
+PixelPrinter Reforged 2.0.0 — made by hash014
+Copyright (C) 2026 hash014. Licensed under GPL-2.0-or-later.
+
+Original project: PixelPrinter by Zombie_Striker / ZombieStriker
+https://github.com/ZombieStriker/PixelPrinter
+Reference checkout: 56c9496b3081125a9a62e01a1f7f6f2f7d8b431f
+Original project copyright notices and GPL v2 license are preserved.
+Reforged is a new implementation of the original plugin's functionality.
+No original implementation classes or Minecraft server classes are bundled.
+No auto-updaters, metrics or PluginConstructorAPI binary are bundled.
+A guarded reflection adapter repairs hanging entities on legacy 1.7 servers.
+
+Bundled dependency: Gson 2.11.0, Google, Apache License 2.0
+https://github.com/google/gson
+Gson is relocated to fr.hash014.pixelprinter.internal.gson.
+Minecraft, Bukkit, Spigot and Paper are separate projects and are not bundled.

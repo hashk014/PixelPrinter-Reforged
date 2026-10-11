@@ -1,0 +1,28 @@
+# PixelPrinter Reforged — made by hash014
+# Global budget shared by all builds, undo and GIFs (not per player).
+blocks-per-tick: 200
+tick-budget-ms: 6
+max-height: 256
+max-blocks: 65536
+max-jobs: 8
+max-pending-loads: 4
+max-undo-blocks: 262144
+undo-history: 5
+max-download-bytes: 16777216
+max-source-pixels: 16777216
+max-decoded-pixels: 33554432
+max-frames: 128
+max-active-frame-pixels: 8388608
+max-map-tiles: 64
+max-stored-map-pixels: 8388608
+network-timeout-ms: 10000
+alpha-threshold: 128
+# Optional Floyd-Steinberg diffusion; /pp create ... true true also enables it.
+dither: false
+resume-gifs: true
+# Remote images: HTTPS/HTTP only, public addresses, bounded downloads and redirects.
+allowed-hosts: []
+# Restrict build palettes; empty = all safe built-in entries plus custom textures.
+materials: []
+# Local files under custom_textures: block-name.png or resource-pack.zip.
+# Keep the original plugin's images by copying them into this plugin's images folder.

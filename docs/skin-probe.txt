@@ -1,0 +1,16 @@
+PixelPrinter Reforged 2.0.0 — public Mojang integration probe, 2026-10-11
+
+SHA-256 of tested release JAR: 75d4a213e5c6563ac52ff4bfed5395a0eaf4fa0afd9f075238e8a59d1387724c
+Source: tools/SkinProbe.java
+Profile: Notch (public Mojang profile, no authentication or player credentials)
+Endpoint sequence: api.mojang.com -> sessionserver.mojang.com -> textures.minecraft.net
+
+Temurin Java 8:
+MOJANG SKIN PASS 64x32 slim=false cape=false
+
+Temurin Java 25:
+MOJANG SKIN PASS 64x32 slim=false cape=false
+
+This verifies profile lookup, JSON/Base64 parsing, HTTPS texture download and
+bounded decoding with the actual shaded release JAR. It does not exercise a
+live profile with a cape/slim model; those paths share the parser and UV planner.

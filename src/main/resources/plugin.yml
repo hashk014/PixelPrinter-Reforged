@@ -1,0 +1,31 @@
+name: PixelPrinterReforged
+main: fr.hash014.pixelprinter.PixelPrinterReforged
+version: 2.0.0
+api-version: '1.13'
+author: hash014
+description: PixelPrinter Reforged - made by hash014. Pixel art, GIF, maps and skin statues.
+softdepend: [WorldGuard]
+commands:
+  pixelprinter:
+    aliases: [pp, ppr, pixelprinterreforged]
+    description: PixelPrinter Reforged commands
+    usage: /pp help
+permissions:
+  pixelprinter.*:
+    default: op
+    children:
+      pixelprinter.create: true
+      pixelprinter.download: true
+      pixelprinter.delete: true
+      pixelprinter.stop: true
+      pixelprinter.admin: true
+  pixelprinter.create:
+    default: op
+  pixelprinter.download:
+    default: op
+  pixelprinter.delete:
+    default: op
+  pixelprinter.stop:
+    default: op
+  pixelprinter.admin:
+    default: op

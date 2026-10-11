@@ -1,0 +1,48 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Install Java 8 for compatibility tests
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: '8'
+          set-default: false
+      - name: Install build JDK
+        uses: actions/setup-java@de7274f081f381c8f8158605e0321c36c376e2e6 # v6.0.1
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Build and test on Java 21
+        run: mvn --batch-mode --no-transfer-progress clean verify
+      - name: Run unit tests on Java 8
+        run: mvn --batch-mode --no-transfer-progress test "-Djvm=$JAVA_HOME_8_X64/bin/java"
+      - name: Upload plugin and sources
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: PixelPrinter-Reforged
+          path: |
+            target/PixelPrinter-Reforged-2.0.0.jar
+            target/PixelPrinter-Reforged-2.0.0-sources.jar
+          if-no-files-found: error
+          retention-days: 30
