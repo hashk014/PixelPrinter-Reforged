@@ -95,6 +95,8 @@ def package():
         "README.fr.md",
         "PROJECT_DESCRIPTION.md",
         "CONTRIBUTING.md",
+        ".editorconfig",
+        ".gitattributes",
         "LICENSE",
         "NOTICE",
         "docs/COMPATIBILITY.md",
